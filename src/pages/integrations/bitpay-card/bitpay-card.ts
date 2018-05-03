@@ -192,7 +192,7 @@ export class BitPayCardPage {
   }
 
   public viewOnBlockchain(transactionId: string) {
-    let url = 'https://insight.bitpay.com/tx/' + transactionId;
+    let url = 'https://insight.zcoin.io/tx/' + transactionId;
     let optIn = true;
     let title = null;
     let message = this.translate.instant('View Transaction on Insight');

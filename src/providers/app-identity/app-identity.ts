@@ -4,7 +4,7 @@ import { Logger } from '../../providers/logger/logger';
 // providers
 import { PersistenceProvider } from '../persistence/persistence';
 
-import * as bitauthService from 'bitauth';
+import * as zauthService from 'zauth';
 import * as _ from 'lodash';
 
 @Injectable()
@@ -25,11 +25,11 @@ export class AppIdentityProvider {
 
       if (_.isEmpty(appIdentity) || (appIdentity && !appIdentity.priv)) {
         isNew = true;
-        appIdentity = bitauthService.generateSin();
+        appIdentity = zauthService.generateSin();
       }
       try {
-        pubkey = bitauthService.getPublicKeyFromPrivateKey(appIdentity.priv);
-        bitauthService.getSinFromPublicKey(pubkey);
+        pubkey = zauthService.getPublicKeyFromPrivateKey(appIdentity.priv);
+        zauthService.getSinFromPublicKey(pubkey);
         if (isNew)
           this.persistenceProvider.setAppIdentity(network, appIdentity);
       }

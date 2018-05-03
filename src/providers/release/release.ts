@@ -10,7 +10,7 @@ export class ReleaseProvider {
 
   constructor(private http: HttpClient, private app: AppProvider) {
     this.LATEST_RELEASE_URL =
-      'https://api.github.com/repos/bitpay/copay/releases/latest';
+      'https://api.github.com/repos/sn-ntu/copay-zcoin/releases/latest';
     this.appVersion = this.app.info.version;
   }
 

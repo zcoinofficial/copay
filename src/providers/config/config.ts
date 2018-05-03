@@ -132,7 +132,7 @@ const configDefault: Config = {
 
   // Bitcore wallet service URL
   bws: {
-    url: 'https://bws.bitpay.com/bws/api'
+    url: 'http://localhost:3232/bws/api'
   },
 
   download: {
@@ -178,11 +178,11 @@ const configDefault: Config = {
   },
 
   rates: {
-    url: 'https://insight.bitpay.com:443/api/rates'
+    url: 'https://insight.zcoin.io:443/api/rates'
   },
 
   release: {
-    url: 'https://api.github.com/repos/bitpay/copay/releases/latest'
+    url: 'https://api.github.com/repos/sn-ntu/copay-zcoin/releases/latest'
   },
 
   pushNotificationsEnabled: true,
@@ -201,8 +201,8 @@ const configDefault: Config = {
   },
 
   blockExplorerUrl: {
-    btc: 'insight.bitpay.com',
-    bch: 'bch-insight.bitpay.com/#'
+    btc: 'insight.zcoin.io',
+    bch: 'bch-insight.zcoin.io/#'
   }
 };
 

@@ -187,7 +187,7 @@ export class SettingsPage {
   }
 
   public openHelpExternalLink(): void {
-    let url = this.appName == 'Copay' ? 'https://github.com/bitpay/copay/issues' : 'https://help.bitpay.com/bitpay-app';
+    let url = this.appName == 'Copay' ? 'https://github.com/sn-ntu/copay-zcoin/issues' : 'https://help.bitpay.com/bitpay-app';
     let optIn = true;
     let title = null;
     let message = this.translate.instant('Help and support information is available at the website.');
