@@ -5,7 +5,7 @@ import { Logger } from '../../providers/logger/logger';
 // providers
 import { AppIdentityProvider } from '../app-identity/app-identity';
 
-import * as bitauthService from 'bitauth';
+import * as zauthService from 'zauth';
 
 @Injectable()
 export class BitPayProvider {
@@ -47,7 +47,7 @@ export class BitPayProvider {
       }
 
       let dataToSign = this.BITPAY_API_URL + endpoint + JSON.stringify(json);
-      let signedData = bitauthService.sign(dataToSign, appIdentity.priv);
+      let signedData = zauthService.sign(dataToSign, appIdentity.priv);
       let url = this.BITPAY_API_URL + endpoint;
 
       let headers: any = new HttpHeaders().set('content-type', 'application/json');
@@ -68,7 +68,7 @@ export class BitPayProvider {
         return errorCallback(err);
       }
 
-      json['params'].signature = bitauthService.sign(JSON.stringify(json.params), appIdentity.priv);
+      json['params'].signature = zauthService.sign(JSON.stringify(json.params), appIdentity.priv);
       json['params'].pubkey = appIdentity.pub;
       json['params'] = JSON.stringify(json.params);
       let url = this.BITPAY_API_URL + '/api/v2/';
